@@ -13,7 +13,6 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject sun;
 
     [Header("----- Panels -----")]
-    public GameObject gameover_panel;
     [SerializeField] private GameObject main_menu_game;
     [SerializeField] private GameObject options_game;
     public GameObject porfile_panel;
@@ -106,5 +105,10 @@ public class UI_Manager : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
+    }
+
+    public void SceneLoad(int scene_number)
+    {
+        SceneManager.LoadScene(scene_number);
     }
 }

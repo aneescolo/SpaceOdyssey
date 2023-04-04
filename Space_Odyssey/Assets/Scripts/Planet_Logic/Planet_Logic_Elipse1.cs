@@ -18,17 +18,18 @@ public class Planet_Logic_Elipse1 : MonoBehaviour
     
     [Header("----- Attributes Variables -----")] 
     public int lives;
-    
+    [SerializeField] private int scene_num;
+
     [Header("----- Music Variables -----")] 
-    [SerializeField] AudioClip touch;
     [SerializeField] AudioClip explosion;
     [SerializeField] private VideoClip gameover_clip;
     public GameObject video_player;
+    public GameObject porfile_panel;
 
     private void Start()
     {
         angularSpeed = 0.5f;
-        lives = 6;
+        lives = 5;
     }
 
     private void Update()
@@ -66,27 +67,18 @@ public class Planet_Logic_Elipse1 : MonoBehaviour
     {
         if (lives == 4)
         {
-            Sound_Manager.instance.PlaySoundEffect(touch);
             gameObject.GetComponentInChildren<Animator>().SetTrigger("1");
         }
         else if (lives == 2)
         {
-            Sound_Manager.instance.PlaySoundEffect(touch);
             gameObject.GetComponentInChildren<Animator>().SetTrigger("2");
         }
         else if (lives == 0)
         {
             Sound_Manager.instance.PlaySoundEffect(explosion);
-            video_player.SetActive(true);
-            StartCoroutine(Game_Over());
-            video_player.GetComponent<VideoPlayer>().clip = gameover_clip;
-            Game_Manager.instance.GameOver();
+            WebRequest_Scores.Instance.Leer_JSON_Score_Y_Crear_Lista();
+            Game_Manager.instance.Highscore();
+            UI_Manager.instance.SceneLoad(scene_num);
         }
-    }
-    
-    IEnumerator Game_Over()
-    {
-        yield return new WaitForSeconds(0.5f);
-        video_player.SetActive(false);
     }
 }

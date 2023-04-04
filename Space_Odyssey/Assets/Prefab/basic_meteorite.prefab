@@ -141,6 +141,7 @@ MonoBehaviour:
   rotationCenter: {fileID: 0}
   speed: 0
   value: 0
+  touch: {fileID: 8300000, guid: 155948ca322ea12458e6a99476a06a8c, type: 3}
 --- !u!1 &7075986184947459926
 GameObject:
   m_ObjectHideFlags: 0

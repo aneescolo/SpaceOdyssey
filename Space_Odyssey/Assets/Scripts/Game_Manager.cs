@@ -151,42 +151,6 @@ public class Game_Manager : MonoBehaviour
 
     #endregion
 
-    public void GameOver()
-    {
-        UI_Manager.instance.porfile_panel.SetActive(false);
-        WebRequest_Scores.Instance.Leer_JSON_Score_Y_Crear_Lista();
-        StartCoroutine(Game_Over());
-    }
-
-    IEnumerator Game_Over()
-    {
-        yield return new WaitForSeconds(0.5f);
-        Pause_Game();
-        Highscore();
-        UI_Manager.instance.gameover_panel.SetActive(true);
-        UI_Manager.instance.score_txt.text = $"{meteorite_count}";
-    }
-
-    private void Highscore()
-    {
-        if (PlayerPrefs.HasKey("Highscore"))
-        {
-            if (meteorite_count <= PlayerPrefs.GetInt("Highscore"))
-            {
-                UI_Manager.instance.highscore_int.text = $"{PlayerPrefs.GetInt("Highscore")}";
-            }
-            else
-            {
-                PlayerPrefs.SetInt("Highscore", meteorite_count);
-                UI_Manager.instance.highscore_int.text = $"{meteorite_count}";
-            }
-        }
-        else
-        {
-            PlayerPrefs.SetInt("Highscore", meteorite_count);
-        }
-    }
-
     #region WebRequest
     
     public void Create_ScoreList()
@@ -245,4 +209,21 @@ public class Game_Manager : MonoBehaviour
     }
 
     #endregion
+    
+    public void Highscore()
+    {
+        PlayerPrefs.SetInt("Score", meteorite_count);
+        
+        if (PlayerPrefs.HasKey("Highscore"))
+        {
+            if (meteorite_count >= PlayerPrefs.GetInt("Highscore"))
+            {
+                PlayerPrefs.SetInt("Highscore", meteorite_count);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Score", meteorite_count);
+        }
+    }
 }

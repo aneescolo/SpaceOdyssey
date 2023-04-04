@@ -18,17 +18,19 @@ public class Meteorite_Logic : MonoBehaviour
     private float angle;
     private int force_impact;
 
+    [SerializeField] AudioClip touch;
+
     private void Start()
     {
         rotationCenter = GameObject.Find("Sun");
 
         angle = Random.Range(50, 75);
         
-        if (gameObject.name.Equals("basic_meteorite") || gameObject.name.Equals("basic_meteorite"))
+        if (gameObject.name.Equals("basic_meteorite") || gameObject.name.Equals("ice_meteorite"))
         {
             force_impact = 1;
         }
-        else if (gameObject.name.Equals("basic_meteorite"))
+        else if (gameObject.name.Equals("green_meteorite"))
         {
             force_impact = 3;
         }
@@ -45,6 +47,8 @@ public class Meteorite_Logic : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D col)
     {
+        Sound_Manager.instance.PlaySoundEffect(touch);
+        
         if (col.GetComponent<CircleCollider2D>().CompareTag("Sun"))
         {
             Game_Manager.instance.AddMeteoriteCount(value);
