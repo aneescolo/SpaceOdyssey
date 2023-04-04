@@ -1,11 +1,8 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Vector3 = System.Numerics.Vector3;
-
 
 public class UI_Manager : MonoBehaviour
 {
@@ -19,21 +16,16 @@ public class UI_Manager : MonoBehaviour
     public GameObject gameover_panel;
     [SerializeField] private GameObject main_menu_game;
     [SerializeField] private GameObject options_game;
+    public GameObject porfile_panel;
 
     [Header("----- Text -----")]
     public TMP_Text score_txt;
-    [SerializeField] private TMP_Text ranking_txt;
-    public List<Score> ranking_list = new List<Score>();
-
+    public TMP_Text highscore_int;
+    [SerializeField] private TMP_Text player_name_text;
+    
     private void Awake()
     {
         instance = this;
-    }
-
-    private void Start()
-    {
-        Game_Manager.instance.Ranking_List();
-        ranking_txt.text = Game_Manager.instance.scorelist_TMP.ToString();
     }
 
     public void Sun_Intro()
@@ -81,12 +73,34 @@ public class UI_Manager : MonoBehaviour
         options_game.SetActive(true);
         Game_Manager.instance.Pause_Game();
     }
+
+    public void Player_Name_Save()
+    {
+        Game_Manager.instance.player_name = player_name_text.text;
+    }
+    
+    public void Player_Name_Load()
+    {
+        player_name_text.text = Game_Manager.instance.player_name;
+    }
     
     public void Game_Menu_Out()
     {
         main_menu_game.SetActive(false);
-        //options_game.SetActive(false);
+        options_game.SetActive(false);
         Game_Manager.instance.Go_Game();
+    }
+
+    public void OpenOptionsMenu()
+    {
+        main_menu_game.SetActive(false);
+        options_game.SetActive(true);
+    }
+    
+    public void CloseOptionsMenu()
+    {
+        main_menu_game.SetActive(true);
+        options_game.SetActive(false);
     }
     
     public void ExitButton()

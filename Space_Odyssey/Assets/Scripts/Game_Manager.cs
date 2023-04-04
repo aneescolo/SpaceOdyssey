@@ -20,14 +20,17 @@ public class Game_Manager : MonoBehaviour
     [SerializeField] private TMP_Text fast;
     [SerializeField] private TMP_Text slow;
     [SerializeField] private bool faster;
-    
-    [Header("----- Meteorite -----")]
+
+    [Header("----- Meteorite -----")] 
+    public string player_name;
     [SerializeField] private TMP_Text score;
     private int meteorite_count;
-    
+
     [Header("----- Web Request -----")]
     public List<Score> scorelist_TMP = new List<Score>();
     public Scores score_data;
+    public GameObject content_score_list;
+    public Item_score_list item_score_list;
 
     public int meteoriteCount
     {
@@ -49,6 +52,7 @@ public class Game_Manager : MonoBehaviour
 
     public void StartGame()
     {
+        player_name = $"Player";
         spawnpoint_basic.SetActive(true);
         spawnpoint_ice.SetActive(true);
         spawnpoint_green.SetActive(true);
@@ -149,12 +153,40 @@ public class Game_Manager : MonoBehaviour
 
     public void GameOver()
     {
+        UI_Manager.instance.porfile_panel.SetActive(false);
+        WebRequest_Scores.Instance.Leer_JSON_Score_Y_Crear_Lista();
+        StartCoroutine(Game_Over());
+    }
+
+    IEnumerator Game_Over()
+    {
+        yield return new WaitForSeconds(0.5f);
         Pause_Game();
+        Highscore();
         UI_Manager.instance.gameover_panel.SetActive(true);
         UI_Manager.instance.score_txt.text = $"{meteorite_count}";
-        WebRequest_Scores.Instance.Leer_JSON_Score_Y_Crear_Lista();
     }
-    
+
+    private void Highscore()
+    {
+        if (PlayerPrefs.HasKey("Highscore"))
+        {
+            if (meteorite_count <= PlayerPrefs.GetInt("Highscore"))
+            {
+                UI_Manager.instance.highscore_int.text = $"{PlayerPrefs.GetInt("Highscore")}";
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Highscore", meteorite_count);
+                UI_Manager.instance.highscore_int.text = $"{meteorite_count}";
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Highscore", meteorite_count);
+        }
+    }
+
     #region WebRequest
     
     public void Create_ScoreList()
@@ -162,6 +194,7 @@ public class Game_Manager : MonoBehaviour
         scorelist_TMP = new List<Score>();
            
         Score new_score = new Score();
+        new_score.player_name = player_name;
         new_score.score = meteorite_count;
 
         if (score_data.scorelist.Length == 0)
@@ -185,11 +218,29 @@ public class Game_Manager : MonoBehaviour
         WebRequest_Scores.Instance.Escribir_Lista_Scores_en_JSON(score_data);
     }
 
-    public void Ranking_List()
+    public void Refresh_Score_List()
     {
-        foreach (Score score in score_data.scorelist)
+        /// Netejar la llista primer per a no duplicar la informació
+        Clean_Teams_List();
+        
+        /// Recorrem la llista de Json per a recollir la informació
+        /// No la temporal ja que la informació no seria correcte
+        foreach (var score in score_data.scorelist)
         {
-            scorelist_TMP.Add(score);
+            Item_score_list _item_teams_list;
+            _item_teams_list = Instantiate(item_score_list, content_score_list.transform);
+            _item_teams_list.player_name = score.player_name;
+            _item_teams_list.score = score.score;
+        }
+    }
+    
+
+    /// Destrueix els elements de la llista
+    public void Clean_Teams_List()
+    {
+        foreach (Transform child in content_score_list.transform)
+        {
+            Destroy(child.gameObject);
         }
     }
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class Planet_Logic_Round : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class Planet_Logic_Round : MonoBehaviour
 
     [Header("----- Attributes Variables -----")] 
     public int lives;
+    
+    [Header("----- Music Variables -----")] 
+    [SerializeField] AudioClip touch;
+    [SerializeField] AudioClip explosion;
+    [SerializeField] private VideoClip gameover_clip;
+    public GameObject video_player;
 
     private void Start()
     {
@@ -36,6 +43,8 @@ public class Planet_Logic_Round : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        PlanetLifeCheck();
+        
         if (col.GetComponent<CircleCollider2D>().CompareTag("Elipse"))
         {
             if (timer >= 1)
@@ -44,23 +53,27 @@ public class Planet_Logic_Round : MonoBehaviour
                 timer = 0;
             }
         }
-        PlanetLifeCheck(); 
+        
+        PlanetLifeCheck();
     }
     
     private void PlanetLifeCheck()
     {
         if (lives == 4)
         {
-            //gameObject.GetComponentInChildren<Animator>().SetTrigger("2");
+            Sound_Manager.instance.PlaySoundEffect(touch);
+            gameObject.GetComponentInChildren<Animator>().SetTrigger("1");
         }
         else if (lives == 2)
         {
-            //gameObject.GetComponentInChildren<Animator>().SetTrigger("1");
+            Sound_Manager.instance.PlaySoundEffect(touch);
+            gameObject.GetComponentInChildren<Animator>().SetTrigger("2");
         }
-        else if (lives <= 0)
+        else if (lives == 0)
         {
-            //gameObject.GetComponentInChildren<Animator>().SetTrigger("0");
-            //Trigger at end animation
+            Sound_Manager.instance.PlaySoundEffect(explosion);
+            video_player.SetActive(true);
+            video_player.GetComponent<VideoPlayer>().clip = gameover_clip;
             Game_Manager.instance.GameOver();
         }
     }

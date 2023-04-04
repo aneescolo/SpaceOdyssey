@@ -6,5 +6,6 @@ using UnityEngine;
 [Serializable]
 public class Score
 {
+    public string player_name;
     public int score;
 }

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Genral_nl-NL
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: nl-NL
+  m_SharedData: {fileID: 11400000, guid: cfc969948686a934984c584424380ff2, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 21531426816
+    m_Localized: Spelen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 535618879488
+    m_Localized: Opties
+    m_Metadata:
+      m_Items: []
+  - m_Id: 651163566080
+    m_Localized: Classificatie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 958933204992
+    m_Localized: Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1039874883584
+    m_Localized: Helderheid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1239263707136
+    m_Localized: Taal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1415067959296
+    m_Localized: Vertrekken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1672581447680
+    m_Localized: Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1913619709952
+    m_Localized: Hoogste score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2336476856320
+    m_Localized: Gebruikersnaam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3515562819584
+    m_Localized: Snel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3700573569024
+    m_Localized: Traag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4837007654912
+    m_Localized: Terug
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
