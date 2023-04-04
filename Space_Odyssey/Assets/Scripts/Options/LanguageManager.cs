@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
@@ -23,15 +21,14 @@ public class LanguageManager : MonoBehaviour
             {"ca", LocalizationSettings.AvailableLocales.Locales[0]},
             {"nl", LocalizationSettings.AvailableLocales.Locales[1]},
             {"en", LocalizationSettings.AvailableLocales.Locales[2]},
-            {"es", LocalizationSettings.AvailableLocales.Locales[4]},
+            {"es", LocalizationSettings.AvailableLocales.Locales[3]}
         };
 
         if (languageDic.ContainsKey(newLanguageCode))
         {
             LocalizationSettings.SelectedLocale = languageDic[newLanguageCode];
+            PlayerPrefs.SetString("Language", newLanguageCode);
         }
-        
-        PlayerPrefs.SetString("Language", newLanguageCode);
     }
 
     IEnumerator ChargeSavedLanguage()

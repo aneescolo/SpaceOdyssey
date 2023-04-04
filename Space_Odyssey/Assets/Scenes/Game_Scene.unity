@@ -738,7 +738,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 479.5444}
+  m_SizeDelta: {x: 463.133, y: 479.544}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &104916342
 CanvasRenderer:
@@ -1831,8 +1831,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73, y: 179.9577}
-  m_SizeDelta: {x: 146, y: 66.0846}
+  m_AnchoredPosition: {x: 131.57, y: 179.96}
+  m_SizeDelta: {x: 200, y: 66.085}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &307214319
 MonoBehaviour:
@@ -2428,7 +2428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: -45.000015}
+  m_AnchoredPosition: {x: 19, y: -49}
   m_SizeDelta: {x: 275, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435182291
@@ -7025,7 +7025,6 @@ GameObject:
   - component: {fileID: 1422027763}
   - component: {fileID: 1422027765}
   - component: {fileID: 1422027764}
-  - component: {fileID: 1422027766}
   m_Layer: 5
   m_Name: score_txt
   m_TagString: Untagged
@@ -7050,7 +7049,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 76}
+  m_AnchoredPosition: {x: 19, y: 79}
   m_SizeDelta: {x: 200, y: 82.1692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1422027764
@@ -7150,46 +7149,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422027762}
   m_CullTransparentMesh: 1
---- !u!114 &1422027766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422027762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:cfc969948686a934984c584424380ff2
-    m_TableEntryReference:
-      m_KeyId: 1672581447680
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1422027764}
-        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-  references:
-    version: 2
-    RefIds: []
 --- !u!1 &1486689864
 GameObject:
   m_ObjectHideFlags: 0
@@ -8395,8 +8354,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -77, y: 179.96}
-  m_SizeDelta: {x: 154, y: 66.085}
+  m_AnchoredPosition: {x: -90, y: 179.96}
+  m_SizeDelta: {x: 197.107, y: 66.085}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1724522246
 MonoBehaviour:

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class Game_Manager : MonoBehaviour
@@ -46,8 +47,11 @@ public class Game_Manager : MonoBehaviour
 
     private void Start()
     {
-        faster = true;
-        ChangeTextSpeed();
+        if (SceneManager.GetActiveScene().Equals(1))
+        {
+            faster = true;
+            ChangeTextSpeed();
+        }
     }
 
     public void StartGame()
@@ -55,7 +59,7 @@ public class Game_Manager : MonoBehaviour
         player_name = $"Player";
         spawnpoint_basic.SetActive(true);
         spawnpoint_ice.SetActive(true);
-        spawnpoint_green.SetActive(true);
+        spawnpoint_green.SetActive(true); 
     }
 
     public void Pause_Game()
@@ -186,11 +190,12 @@ public class Game_Manager : MonoBehaviour
     {
         /// Netejar la llista primer per a no duplicar la informació
         Clean_Teams_List();
-        
+        Debug.Log("clean");
         /// Recorrem la llista de Json per a recollir la informació
         /// No la temporal ja que la informació no seria correcte
-        foreach (var score in score_data.scorelist)
+        foreach (Score score in score_data.scorelist)
         {
+            Debug.Log("score");
             Item_score_list _item_teams_list;
             _item_teams_list = Instantiate(item_score_list, content_score_list.transform);
             _item_teams_list.player_name = score.player_name;
