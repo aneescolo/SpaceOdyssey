@@ -13,22 +13,22 @@ EditorBuildSettings:
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Game Over/Game_Over_1.unity
-    guid: c8922415f6c12c3459f858bfc07a3252
+    guid: 0b11e1c36d2a96e4cb90e49583bec15d
   - enabled: 1
     path: Assets/Scenes/Game Over/Game_Over_2.unity
     guid: d8e97678c59a5cd43ab32a20d0e505f1
   - enabled: 1
     path: Assets/Scenes/Game Over/Game_Over_3.unity
-    guid: 7995557eef9adfa49b3e01e0cfab17f4
+    guid: f95c286dd26ce85448cae7cb6de7e60c
   - enabled: 1
     path: Assets/Scenes/Game Over/Game_Over_4.unity
-    guid: a63a4fa6a91da1244920e7c5c33ab5e4
+    guid: a36cfe81d4db8f74b8df448ef1799c09
   - enabled: 1
     path: Assets/Scenes/Game Over/Game_Over_5.unity
-    guid: 08efab1dd684150489e2fb8c14654d95
+    guid: 6bc71716e1e9485438d97c18e024fe1d
   - enabled: 1
     path: Assets/Scenes/Game Over/Game_Over_6.unity
-    guid: 542f62f1499b28348966e7956612eb39
+    guid: 783a393a5a9f9b94886b6ce82feb847a
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 0c6c878c837833d44beffd02829265dc, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: f4090bf8e46734546bc9ea35fb22659c, type: 2}

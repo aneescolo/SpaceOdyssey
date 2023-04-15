@@ -16,7 +16,8 @@ public class Planet_Logic_Round : MonoBehaviour
     [Header("----- Attributes Variables -----")] 
     public int lives;
     [SerializeField] private int scene_num;
-    
+    [SerializeField] private ParticleSystem explotion_particle;
+
     [Header("----- Music Variables -----")] 
     [SerializeField] AudioClip explosion;
     [SerializeField] private VideoClip gameover_clip;
@@ -62,10 +63,12 @@ public class Planet_Logic_Round : MonoBehaviour
     {
         if (lives == 4)
         {
+            explotion_particle.Play();
             gameObject.GetComponentInChildren<Animator>().SetTrigger("1");
         }
         else if (lives == 2)
         {
+            explotion_particle.Play();
             gameObject.GetComponentInChildren<Animator>().SetTrigger("2");
         }
         else if (lives == 0)

@@ -19,6 +19,7 @@ public class Planet_Logic_Elipse2 : MonoBehaviour
     [Header("----- Attributes Variables -----")] 
     public int lives;
     [SerializeField] private int scene_num;
+    [SerializeField] private ParticleSystem explotion_particle;
 
     [Header("----- Music Variables -----")] 
     [SerializeField] AudioClip explosion;
@@ -67,10 +68,12 @@ public class Planet_Logic_Elipse2 : MonoBehaviour
     {
         if (lives == 4)
         {
+            explotion_particle.Play();
             gameObject.GetComponentInChildren<Animator>().SetTrigger("1");
         }
         else if (lives == 2)
         {
+            explotion_particle.Play();
             gameObject.GetComponentInChildren<Animator>().SetTrigger("2");
         }
         else if (lives == 0)
