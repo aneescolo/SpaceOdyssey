@@ -86,8 +86,8 @@ public class WebRequest_Scores : MonoBehaviour
         if (web.result != UnityWebRequest.Result.ConnectionError && web.result != UnityWebRequest.Result.ProtocolError)
         {
             score_data_webRequest = JsonUtility.FromJson<Scores>(web.downloadHandler.text);
-            //UI_Manager.instance.user_data = datos_usuarios_webRequest;
-            //UI_Manager.instance.Cargar_Info_Lista_Usuarios();
+            Game_Manager.instance.score_data = score_data_webRequest;
+            Game_Manager.instance.Refresh_Score_List();
         }
         else
         {
