@@ -6145,11 +6145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7826a99e0e20b2d4cb0376c9943c2dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sun_intro: {fileID: 0}
+  sun_intro: {fileID: 1486689864}
   sun: {fileID: 1748640131}
   main_menu_game: {fileID: 712211099}
   options_game: {fileID: 56957338}
-  instruction_game: {fileID: 0}
+  instruction_game: {fileID: 1437469147}
   porfile_panel: {fileID: 104916339}
   score_txt: {fileID: 10874129}
   highscore_int: {fileID: 465431546}
@@ -7345,7 +7345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1437469148
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7365,7 +7365,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -400, y: -300}
+  m_SizeDelta: {x: -400, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1437469149
 MonoBehaviour:
@@ -7380,15 +7380,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6290aac3fee104b44be1ff9d312fafd8, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7473,18 +7473,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1486689864}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7826a99e0e20b2d4cb0376c9943c2dc7, type: 3}
+  m_Script: {fileID: 11500000, guid: da2ce16bfc96b674888d4e586ccf5804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sun_intro: {fileID: 1486689864}
-  sun: {fileID: 1748640131}
-  main_menu_game: {fileID: 0}
-  options_game: {fileID: 0}
-  instruction_game: {fileID: 0}
-  porfile_panel: {fileID: 0}
-  score_txt: {fileID: 0}
-  highscore_int: {fileID: 0}
-  player_name_text: {fileID: 0}
+  sun: {fileID: 0}
+  mainmenu_btns: {fileID: 0}
+  options_txt: {fileID: 0}
+  options_out_btn: {fileID: 0}
+  ranking_txt: {fileID: 0}
+  ranking_out_btn: {fileID: 0}
+  game_structure: {fileID: 0}
 --- !u!1 &1488998248
 GameObject:
   m_ObjectHideFlags: 0
@@ -9748,7 +9746,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -85}
   m_SizeDelta: {x: 200, y: 85}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1898002961
@@ -9798,18 +9796,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1160326252}
         m_TargetAssemblyTypeName: UI_Manager, Assembly-CSharp
         m_MethodName: StartGameIntro
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1642932265}
-        m_TargetAssemblyTypeName: AnimationEvent_Handler, Assembly-CSharp
-        m_MethodName: GameScene_TriggerOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

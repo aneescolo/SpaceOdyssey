@@ -102,6 +102,11 @@ public class AnimationEvent_Handler : MonoBehaviour
     {
         game_structure.GetComponent<Animator>().SetTrigger("Out");
     }
+
+    public void SunIntro()
+    {
+        UI_Manager.instance.Sun_Intro();
+    }
     
     public void Pause_Game()
     {

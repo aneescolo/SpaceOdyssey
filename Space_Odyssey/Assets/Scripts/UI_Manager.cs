@@ -32,11 +32,14 @@ public class UI_Manager : MonoBehaviour
     {
         sun_intro.SetActive(false);
         instruction_game.SetActive(true);
+        Game_Manager.instance.Pause_Game();
     }
 
     public void StartGameIntro()
     {
+        Game_Manager.instance.Go_Game();
         sun.SetActive(true);
+        instruction_game.SetActive(false);
         Game_Manager.instance.StartGame();
     }
 
