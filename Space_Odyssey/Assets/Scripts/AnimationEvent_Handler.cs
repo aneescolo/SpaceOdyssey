@@ -12,6 +12,7 @@ public class AnimationEvent_Handler : MonoBehaviour
     [SerializeField] private GameObject ranking_txt;
     [SerializeField] private GameObject ranking_out_btn;
     [SerializeField] private GameObject game_structure;
+    [SerializeField] private GameObject game_profile;
 
     public void SunTriggerIn()
     {
@@ -106,6 +107,16 @@ public class AnimationEvent_Handler : MonoBehaviour
     public void SunIntro()
     {
         UI_Manager.instance.Sun_Intro();
+    }
+    
+    public void GameProfileOn()
+    {
+        game_profile.SetActive(true);
+    }
+    
+    public void GameProfileOff()
+    {
+        game_profile.SetActive(false);
     }
     
     public void Pause_Game()

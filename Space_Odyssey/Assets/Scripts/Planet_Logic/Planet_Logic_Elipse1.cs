@@ -23,9 +23,6 @@ public class Planet_Logic_Elipse1 : MonoBehaviour
 
     [Header("----- Music Variables -----")] 
     [SerializeField] AudioClip explosion;
-    [SerializeField] private VideoClip gameover_clip;
-    public GameObject video_player;
-    public GameObject porfile_panel;
 
     private void Start()
     {
@@ -51,6 +48,7 @@ public class Planet_Logic_Elipse1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        explotion_particle.Play();
         PlanetLifeCheck();
         
         if (col.GetComponent<CircleCollider2D>().CompareTag("Round"))
@@ -68,12 +66,10 @@ public class Planet_Logic_Elipse1 : MonoBehaviour
     {
         if (lives == 4)
         {
-            explotion_particle.Play();
             gameObject.GetComponentInChildren<Animator>().SetTrigger("1");
         }
         else if (lives == 2)
         {
-            explotion_particle.Play();
             gameObject.GetComponentInChildren<Animator>().SetTrigger("2");
         }
         else if (lives == 0)
@@ -81,7 +77,13 @@ public class Planet_Logic_Elipse1 : MonoBehaviour
             Sound_Manager.instance.PlaySoundEffect(explosion);
             WebRequest_Scores.Instance.Leer_JSON_Score_Y_Crear_Lista();
             Game_Manager.instance.Highscore();
-            UI_Manager.instance.SceneLoad(scene_num);
+            StartCoroutine(GameOver());
         }
+    }
+
+    IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(5f);
+        UI_Manager.instance.SceneLoad(scene_num);
     }
 }

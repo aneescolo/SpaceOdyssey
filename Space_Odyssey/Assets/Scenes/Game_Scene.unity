@@ -546,6 +546,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!95 &56957341
 Animator:
   serializedVersion: 4
@@ -6403,6 +6404,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!114 &299336106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6744,8 +6746,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8117,6 +8119,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!114 &534043814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8804,6 +8807,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 104916339}
 --- !u!95 &596776553
 Animator:
   serializedVersion: 4
@@ -14894,6 +14898,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 104916339}
 --- !u!1 &980286384
 GameObject:
   m_ObjectHideFlags: 0
@@ -14953,6 +14958,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!114 &980286387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31889,6 +31895,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!1 &1488998248
 GameObject:
   m_ObjectHideFlags: 0
@@ -32607,6 +32614,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 967360212}
+  game_profile: {fileID: 0}
 --- !u!4 &1642932266
 Transform:
   m_ObjectHideFlags: 0
@@ -39201,6 +39209,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!114 &1923378960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40123,9 +40132,6 @@ MonoBehaviour:
   scene_num: 3
   explotion_particle: {fileID: 885938746}
   explosion: {fileID: 8300000, guid: 334698c3dfd7edf4782731b59a5d48a8, type: 3}
-  gameover_clip: {fileID: 32900000, guid: 6ee01c063219fc34eb0624e5a9705b0d, type: 3}
-  video_player: {fileID: 252585050}
-  porfile_panel: {fileID: 104916339}
 --- !u!50 &2119384845
 Rigidbody2D:
   serializedVersion: 4

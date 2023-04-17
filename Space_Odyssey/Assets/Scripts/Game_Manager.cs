@@ -47,10 +47,21 @@ public class Game_Manager : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().Equals(1))
+        if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Game_Scene"))
         {
             faster = true;
             ChangeTextSpeed();
+        }
+    }
+    
+    public void Update()
+    {
+        if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Game_Scene"))
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                AddMeteoriteCount(10);
+            }
         }
     }
 
@@ -159,6 +170,7 @@ public class Game_Manager : MonoBehaviour
     
     public void Create_ScoreList()
     {
+        Debug.Log("new list");
         scorelist_TMP = new List<Score>();
            
         Score new_score = new Score();
@@ -229,6 +241,7 @@ public class Game_Manager : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt("Score", meteorite_count);
+            PlayerPrefs.SetInt("Highscore", meteorite_count);
         }
     }
 }

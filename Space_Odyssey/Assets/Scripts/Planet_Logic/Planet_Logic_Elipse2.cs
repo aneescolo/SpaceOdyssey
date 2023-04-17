@@ -51,6 +51,7 @@ public class Planet_Logic_Elipse2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        explotion_particle.Play();
         PlanetLifeCheck();
         
         if (col.GetComponent<CircleCollider2D>().CompareTag("Round"))
@@ -68,12 +69,10 @@ public class Planet_Logic_Elipse2 : MonoBehaviour
     {
         if (lives == 4)
         {
-            explotion_particle.Play();
             gameObject.GetComponentInChildren<Animator>().SetTrigger("1");
         }
         else if (lives == 2)
         {
-            explotion_particle.Play();
             gameObject.GetComponentInChildren<Animator>().SetTrigger("2");
         }
         else if (lives == 0)
