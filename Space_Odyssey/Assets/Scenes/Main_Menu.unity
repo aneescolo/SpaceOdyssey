@@ -351,6 +351,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!114 &123888321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +368,7 @@ MonoBehaviour:
   sun: {fileID: 0}
   main_menu_game: {fileID: 0}
   options_game: {fileID: 0}
+  instruction_game: {fileID: 0}
   porfile_panel: {fileID: 0}
   score_txt: {fileID: 0}
   highscore_int: {fileID: 0}
@@ -990,6 +992,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 1909983427}
   ranking_out_btn: {fileID: 359706651}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!1 &368912071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,6 +1632,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 1909983427}
   ranking_out_btn: {fileID: 359706651}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!4 &610607858
 Transform:
   m_ObjectHideFlags: 0
@@ -1855,6 +1859,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!114 &790744830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2807,6 +2812,7 @@ GameObject:
   - component: {fileID: 1202797925}
   - component: {fileID: 1202797924}
   - component: {fileID: 1202797926}
+  - component: {fileID: 1202797927}
   m_Layer: 0
   m_Name: Background_Music
   m_TagString: Untagged
@@ -2824,7 +2830,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5adf5edfca984bb4c88afde37b0dbad0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2940,6 +2946,102 @@ MonoBehaviour:
   mainaudio_Source: {fileID: 1202797924}
   background_music: {fileID: 8300000, guid: 5adf5edfca984bb4c88afde37b0dbad0, type: 3}
   ambiance: {fileID: 8300000, guid: 425817d178d8678419a98afe614e7166, type: 3}
+--- !u!82 &1202797927
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202797923}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 425817d178d8678419a98afe614e7166, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 85
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1253949069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3310,6 +3412,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 1909983427}
   ranking_out_btn: {fileID: 359706651}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!1 &1375087992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3508,6 +3611,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 1909983427}
   ranking_out_btn: {fileID: 359706651}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!1 &1376739991
 GameObject:
   m_ObjectHideFlags: 0
@@ -3860,6 +3964,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!1 &1625297828
 GameObject:
   m_ObjectHideFlags: 0
@@ -4123,6 +4228,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!1 &1700140327
 GameObject:
   m_ObjectHideFlags: 0
@@ -4235,7 +4341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 0, y: 122}
   m_SizeDelta: {x: 1000, y: 765}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1706102159
@@ -4257,6 +4363,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!222 &1706102161
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5082,6 +5189,7 @@ MonoBehaviour:
   sun: {fileID: 0}
   main_menu_game: {fileID: 0}
   options_game: {fileID: 0}
+  instruction_game: {fileID: 0}
   porfile_panel: {fileID: 0}
   score_txt: {fileID: 0}
   highscore_int: {fileID: 0}
@@ -5247,6 +5355,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!95 &1909983430
 Animator:
   serializedVersion: 4
@@ -5459,6 +5568,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!114 &1979076856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5655,6 +5765,7 @@ MonoBehaviour:
   ranking_txt: {fileID: 0}
   ranking_out_btn: {fileID: 0}
   game_structure: {fileID: 0}
+  game_profile: {fileID: 0}
 --- !u!114 &2053680724
 MonoBehaviour:
   m_ObjectHideFlags: 0

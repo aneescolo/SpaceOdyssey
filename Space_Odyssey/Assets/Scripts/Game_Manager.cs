@@ -190,7 +190,7 @@ public class Game_Manager : MonoBehaviour
             }
         }
         scorelist_TMP = scorelist_TMP.OrderByDescending(o => o.score).ToList();
-        if (score_data.scorelist.Length > 10)
+        if (score_data.scorelist.Length >= 10)
         {
             scorelist_TMP.RemoveRange(10, scorelist_TMP.Count - 10);
         }

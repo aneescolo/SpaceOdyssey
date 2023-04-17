@@ -24,9 +24,6 @@ public class Background_Music : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-        PlaySoundMusic(background_music);
-        PlaySoundMusic(ambiance);
     }
     
     private void PlaySoundMusic(AudioClip clip)

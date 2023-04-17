@@ -83,7 +83,7 @@ public class Planet_Logic_Elipse1 : MonoBehaviour
 
     IEnumerator GameOver()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
         UI_Manager.instance.SceneLoad(scene_num);
     }
 }

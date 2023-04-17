@@ -15,7 +15,8 @@ public class UI_Manager : MonoBehaviour
     [Header("----- Panels -----")]
     [SerializeField] private GameObject main_menu_game;
     [SerializeField] private GameObject options_game;
-    [SerializeField] private GameObject instruction_game;
+    [SerializeField] private GameObject instruction_1_game;
+    [SerializeField] private GameObject instruction_2_game;
     public GameObject porfile_panel;
 
     [Header("----- Text -----")]
@@ -31,15 +32,21 @@ public class UI_Manager : MonoBehaviour
     public void Sun_Intro()
     {
         sun_intro.SetActive(false);
-        instruction_game.SetActive(true);
+        instruction_1_game.SetActive(true);
         Game_Manager.instance.Pause_Game();
+    }
+    
+    public void Sun_Intro_2()
+    {
+        instruction_1_game.SetActive(false); 
+        instruction_2_game.SetActive(true); 
     }
 
     public void StartGameIntro()
     {
         Game_Manager.instance.Go_Game();
         sun.SetActive(true);
-        instruction_game.SetActive(false);
+        instruction_2_game.SetActive(false);
         Game_Manager.instance.StartGame();
     }
 

@@ -75,7 +75,13 @@ public class Planet_Logic_Round : MonoBehaviour
             Sound_Manager.instance.PlaySoundEffect(explosion);
             WebRequest_Scores.Instance.Leer_JSON_Score_Y_Crear_Lista();
             Game_Manager.instance.Highscore();
-            UI_Manager.instance.SceneLoad(scene_num);
+            StartCoroutine(GameOver());
         }
+    }
+
+    IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(1f);
+        UI_Manager.instance.SceneLoad(scene_num);
     }
 }
