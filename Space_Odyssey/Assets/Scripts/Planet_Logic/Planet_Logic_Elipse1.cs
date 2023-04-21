@@ -23,6 +23,8 @@ public class Planet_Logic_Elipse1 : MonoBehaviour
 
     [Header("----- Music Variables -----")] 
     [SerializeField] AudioClip explosion;
+    [SerializeField] AudioClip touch;
+    [SerializeField] AudioClip speed;
 
     private void Start()
     {
@@ -49,9 +51,10 @@ public class Planet_Logic_Elipse1 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         explotion_particle.Play();
+        Sound_Manager.instance.PlaySoundEffect(touch);
         PlanetLifeCheck();
         
-        if (col.GetComponent<CircleCollider2D>().CompareTag("Round"))
+        if (col.GetComponent<CircleCollider2D>().CompareTag("Elipse") || col.GetComponent<CircleCollider2D>().CompareTag("Round"))
         {
             if (timer >= 1)
             {

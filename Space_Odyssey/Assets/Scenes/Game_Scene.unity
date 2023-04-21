@@ -5818,9 +5818,8 @@ MonoBehaviour:
   scene_num: 5
   explotion_particle: {fileID: 1712197359}
   explosion: {fileID: 8300000, guid: 334698c3dfd7edf4782731b59a5d48a8, type: 3}
-  gameover_clip: {fileID: 32900000, guid: 2fc9ca15f9ca2d743b645ebf526b5f69, type: 3}
-  video_player: {fileID: 252585050}
-  porfile_panel: {fileID: 104916339}
+  touch: {fileID: 8300000, guid: 155948ca322ea12458e6a99476a06a8c, type: 3}
+  speed_s: {fileID: 8300000, guid: fb72f7d7b6b454840936ecc0d424f376, type: 3}
 --- !u!50 &162057947
 Rigidbody2D:
   serializedVersion: 4
@@ -7942,9 +7941,8 @@ MonoBehaviour:
   scene_num: 0
   explotion_particle: {fileID: 0}
   explosion: {fileID: 0}
-  gameover_clip: {fileID: 0}
-  video_player: {fileID: 0}
-  porfile_panel: {fileID: 0}
+  touch: {fileID: 0}
+  speed_s: {fileID: 0}
 --- !u!4 &511591903
 Transform:
   m_ObjectHideFlags: 0
@@ -8529,9 +8527,8 @@ MonoBehaviour:
   scene_num: 0
   explotion_particle: {fileID: 0}
   explosion: {fileID: 0}
-  gameover_clip: {fileID: 0}
-  video_player: {fileID: 0}
-  porfile_panel: {fileID: 0}
+  touch: {fileID: 0}
+  speed_s: {fileID: 0}
 --- !u!4 &540148979
 Transform:
   m_ObjectHideFlags: 0
@@ -9649,9 +9646,8 @@ MonoBehaviour:
   scene_num: 0
   explotion_particle: {fileID: 0}
   explosion: {fileID: 0}
-  gameover_clip: {fileID: 0}
-  video_player: {fileID: 0}
-  porfile_panel: {fileID: 0}
+  touch: {fileID: 0}
+  speed_s: {fileID: 0}
 --- !u!1 &712211099
 GameObject:
   m_ObjectHideFlags: 0
@@ -14830,9 +14826,8 @@ MonoBehaviour:
   scene_num: 0
   explotion_particle: {fileID: 0}
   explosion: {fileID: 0}
-  gameover_clip: {fileID: 0}
-  video_player: {fileID: 0}
-  porfile_panel: {fileID: 0}
+  touch: {fileID: 0}
+  speed_s: {fileID: 0}
 --- !u!212 &888842062
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30931,9 +30926,8 @@ MonoBehaviour:
   scene_num: 6
   explotion_particle: {fileID: 1090081966}
   explosion: {fileID: 8300000, guid: 334698c3dfd7edf4782731b59a5d48a8, type: 3}
-  gameover_clip: {fileID: 32900000, guid: e2c0009701dd931499b9d6bd0e2347bd, type: 3}
-  video_player: {fileID: 252585050}
-  porfile_panel: {fileID: 104916339}
+  touch: {fileID: 8300000, guid: 155948ca322ea12458e6a99476a06a8c, type: 3}
+  speed_s: {fileID: 8300000, guid: fb72f7d7b6b454840936ecc0d424f376, type: 3}
 --- !u!50 &1204477715
 Rigidbody2D:
   serializedVersion: 4
@@ -31254,9 +31248,8 @@ MonoBehaviour:
   scene_num: 0
   explotion_particle: {fileID: 0}
   explosion: {fileID: 0}
-  gameover_clip: {fileID: 0}
-  video_player: {fileID: 0}
-  porfile_panel: {fileID: 0}
+  touch: {fileID: 0}
+  speed_s: {fileID: 0}
 --- !u!212 &1231950239
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31645,9 +31638,8 @@ MonoBehaviour:
   scene_num: 2
   explotion_particle: {fileID: 61702684}
   explosion: {fileID: 8300000, guid: 334698c3dfd7edf4782731b59a5d48a8, type: 3}
-  gameover_clip: {fileID: 32900000, guid: 36ee741ef54f39e409eeb0d78a30ecf7, type: 3}
-  video_player: {fileID: 252585050}
-  porfile_panel: {fileID: 104916339}
+  touch: {fileID: 8300000, guid: 155948ca322ea12458e6a99476a06a8c, type: 3}
+  speed: {fileID: 8300000, guid: fb72f7d7b6b454840936ecc0d424f376, type: 3}
 --- !u!1 &1364680090
 GameObject:
   m_ObjectHideFlags: 0
@@ -38242,9 +38234,8 @@ MonoBehaviour:
   scene_num: 7
   explotion_particle: {fileID: 1055796563}
   explosion: {fileID: 8300000, guid: 334698c3dfd7edf4782731b59a5d48a8, type: 3}
-  gameover_clip: {fileID: 32900000, guid: a7b5d0fe6d68f734cb4d02e64c5486c3, type: 3}
-  video_player: {fileID: 252585050}
-  porfile_panel: {fileID: 104916339}
+  touch: {fileID: 8300000, guid: 155948ca322ea12458e6a99476a06a8c, type: 3}
+  speed_s: {fileID: 8300000, guid: fb72f7d7b6b454840936ecc0d424f376, type: 3}
 --- !u!58 &1712345854
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -40546,6 +40537,8 @@ MonoBehaviour:
   scene_num: 3
   explotion_particle: {fileID: 885938746}
   explosion: {fileID: 8300000, guid: 334698c3dfd7edf4782731b59a5d48a8, type: 3}
+  touch: {fileID: 8300000, guid: 155948ca322ea12458e6a99476a06a8c, type: 3}
+  speed: {fileID: 8300000, guid: fb72f7d7b6b454840936ecc0d424f376, type: 3}
 --- !u!50 &2119384845
 Rigidbody2D:
   serializedVersion: 4
@@ -40622,9 +40615,8 @@ MonoBehaviour:
   scene_num: 4
   explotion_particle: {fileID: 1136510910}
   explosion: {fileID: 8300000, guid: 334698c3dfd7edf4782731b59a5d48a8, type: 3}
-  gameover_clip: {fileID: 32900000, guid: 811ad5e4e8b3b984396dcff4f8c7bce3, type: 3}
-  video_player: {fileID: 252585050}
-  porfile_panel: {fileID: 104916339}
+  touch: {fileID: 8300000, guid: 155948ca322ea12458e6a99476a06a8c, type: 3}
+  speed_s: {fileID: 8300000, guid: fb72f7d7b6b454840936ecc0d424f376, type: 3}
 --- !u!50 &2137713851
 Rigidbody2D:
   serializedVersion: 4

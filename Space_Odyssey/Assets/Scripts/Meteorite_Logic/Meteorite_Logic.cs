@@ -19,6 +19,7 @@ public class Meteorite_Logic : MonoBehaviour
     private int force_impact;
 
     [SerializeField] AudioClip touch;
+    [SerializeField] AudioClip point;
     
     [SerializeField] private ParticleSystem explotion_particle;
 
@@ -49,26 +50,29 @@ public class Meteorite_Logic : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Sound_Manager.instance.PlaySoundEffect(touch);
         explotion_particle.Play();
         
         if (col.GetComponent<CircleCollider2D>().CompareTag("Sun"))
         {
+            Sound_Manager.instance.PlaySoundEffect(point);
             Game_Manager.instance.AddMeteoriteCount(value);
             StartCoroutine(Destroy());
         }
         else if (col.GetComponent<Planet_Logic_Round>())
         {
+            Sound_Manager.instance.PlaySoundEffect(touch);
             col.GetComponent<Planet_Logic_Round>().lives -= force_impact;
             StartCoroutine(Destroy());
         }
         else if (GetComponent<Planet_Logic_Elipse1>())
         {
+            Sound_Manager.instance.PlaySoundEffect(touch);
             col.GetComponent<Planet_Logic_Elipse1>().lives -= force_impact;
             StartCoroutine(Destroy());
         }
         else if (col.GetComponent<Planet_Logic_Elipse2>())
         {
+            Sound_Manager.instance.PlaySoundEffect(touch);
             col.GetComponent<Planet_Logic_Elipse2>().lives -= force_impact;
             StartCoroutine(Destroy());
         }
