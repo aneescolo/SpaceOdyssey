@@ -91,12 +91,18 @@ public class UI_Manager : MonoBehaviour
 
     public void Player_Name_Save()
     {
-        Game_Manager.instance.player_name = player_name_text.text;
+        WebRequest_Highscore.Instance.Leer_JSON_Score_Y_Editar_Lista(player_name_text);
+
+    }
+    
+    public void Player_Name_Add()
+    {
+        WebRequest_Highscore.Instance.Leer_JSON_Score_Y_Crear_Lista(player_name_text);
     }
     
     public void Player_Name_Load()
     {
-        player_name_text.text = Game_Manager.instance.player_name;
+        player_name_text.text = PlayerPrefs.GetString("PlayerName");
     }
     
     public void Game_Menu_Out()

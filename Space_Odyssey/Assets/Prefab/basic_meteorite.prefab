@@ -142,6 +142,7 @@ MonoBehaviour:
   rotationCenter: {fileID: 0}
   speed: 0
   value: 0
+  force_impact: 1
   touch: {fileID: 8300000, guid: 155948ca322ea12458e6a99476a06a8c, type: 3}
   point: {fileID: 8300000, guid: 921ce15dd53e98049b30689e13efe5b5, type: 3}
   explotion_particle: {fileID: 6557296548287502499}

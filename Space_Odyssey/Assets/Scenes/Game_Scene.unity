@@ -30840,7 +30840,7 @@ GameObject:
   - component: {fileID: 1164142287}
   - component: {fileID: 1164142288}
   m_Layer: 0
-  m_Name: Game_Manager
+  m_Name: ----- Game_Manager -----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30880,13 +30880,15 @@ MonoBehaviour:
   fast: {fileID: 1724522246}
   slow: {fileID: 307214319}
   faster: 0
-  player_name: 
   score: {fileID: 1422027764}
   scorelist_TMP: []
   score_data:
     scorelist: []
   content_score_list: {fileID: 0}
   item_score_list: {fileID: 0}
+  highscorelist_TMP: []
+  highscore_data:
+    highscorelist: []
 --- !u!1 &1204477713
 GameObject:
   m_ObjectHideFlags: 0

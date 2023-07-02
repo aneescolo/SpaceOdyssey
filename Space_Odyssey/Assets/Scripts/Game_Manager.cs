@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using EasyUI.Toast;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -23,7 +24,6 @@ public class Game_Manager : MonoBehaviour
     [SerializeField] private bool faster;
 
     [Header("----- Meteorite -----")] 
-    public string player_name;
     [SerializeField] private TMP_Text score;
     private int meteorite_count;
 
@@ -32,6 +32,10 @@ public class Game_Manager : MonoBehaviour
     public Scores score_data;
     public GameObject content_score_list;
     public Item_score_list item_score_list;
+    
+    public List<Highscore> highscorelist_TMP = new List<Highscore>();
+    public Highscores highscore_data;
+    private bool existentuserwithsamedata;
 
     public int meteoriteCount
     {
@@ -67,7 +71,6 @@ public class Game_Manager : MonoBehaviour
 
     public void StartGame()
     {
-        player_name = $"Player";
         spawnpoint_basic.SetActive(true);
         spawnpoint_ice.SetActive(true);
         spawnpoint_green.SetActive(true); 
@@ -103,13 +106,13 @@ public class Game_Manager : MonoBehaviour
     {
         if (planet.tag.Equals("Round"))
         {
-            if (faster && planet.GetComponent<Planet_Logic_Round>().speed != 50)
+            if (faster && planet.GetComponent<Planet_Logic_Round>().speed < 50)
             {
                 planet.GetComponent<Planet_Logic_Round>().speed += 20;
                 faster = false;
                 ChangeTextSpeed();
             }
-            else if (!faster && planet.GetComponent<Planet_Logic_Round>().speed != 10)
+            else if (!faster && planet.GetComponent<Planet_Logic_Round>().speed > 10)
             {
                 planet.GetComponent<Planet_Logic_Round>().speed -= 20;
                 faster = true;
@@ -120,13 +123,13 @@ public class Game_Manager : MonoBehaviour
         }
         else if (planet.tag.Equals("Elipse") && planet.GetComponent<Planet_Logic_Elipse1>())
         {
-            if (faster && planet.GetComponent<Planet_Logic_Elipse1>().angularSpeed != 0.8)
+            if (faster && planet.GetComponent<Planet_Logic_Elipse1>().angularSpeed < 0.8)
             {
                 planet.GetComponent<Planet_Logic_Elipse1>().angularSpeed += 0.3f;
                 faster = false;
                 ChangeTextSpeed();
             }
-            else if (!faster && planet.GetComponent<Planet_Logic_Elipse1>().angularSpeed != 0.2)
+            else if (!faster && planet.GetComponent<Planet_Logic_Elipse1>().angularSpeed > 0.2)
             {
                 planet.GetComponent<Planet_Logic_Elipse1>().angularSpeed -= 0.3f;
                 faster = true;
@@ -137,13 +140,13 @@ public class Game_Manager : MonoBehaviour
         }
         else if (planet.tag.Equals("Elipse") && planet.GetComponent<Planet_Logic_Elipse2>())
         {
-            if (faster && planet.GetComponent<Planet_Logic_Elipse2>().angularSpeed != 1.5)
+            if (faster && planet.GetComponent<Planet_Logic_Elipse2>().angularSpeed < 1.5)
             {
                 planet.GetComponent<Planet_Logic_Elipse2>().angularSpeed += 0.5f;
                 faster = false;
                 ChangeTextSpeed();
             }
-            else if (!faster && planet.GetComponent<Planet_Logic_Elipse2>().angularSpeed != 0.5)
+            else if (!faster && planet.GetComponent<Planet_Logic_Elipse2>().angularSpeed > 0.5)
             {
                 planet.GetComponent<Planet_Logic_Elipse2>().angularSpeed -= 0.5f;
                 faster = true;
@@ -174,7 +177,7 @@ public class Game_Manager : MonoBehaviour
         scorelist_TMP = new List<Score>();
            
         Score new_score = new Score();
-        new_score.player_name = player_name;
+        new_score.player_name = PlayerPrefs.GetString("PlayerName");
         new_score.score = meteorite_count;
 
         if (score_data.scorelist.Length == 0)
@@ -200,11 +203,11 @@ public class Game_Manager : MonoBehaviour
 
     public void Refresh_Score_List()
     {
-        /// Netejar la llista primer per a no duplicar la informació
+        // Netejar la llista primer per a no duplicar la informació
         Clean_Teams_List();
         Debug.Log("clean");
-        /// Recorrem la llista de Json per a recollir la informació
-        /// No la temporal ja que la informació no seria correcte
+        // Recorrem la llista de Json per a recollir la informació
+        // No la temporal ja que la informació no seria correcte
         foreach (Score score in score_data.scorelist)
         {
             Debug.Log("score");
@@ -224,24 +227,96 @@ public class Game_Manager : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
-
-    #endregion
     
-    public void Highscore()
+    public void Add_PlayerName(TMP_Text txt)
     {
-        PlayerPrefs.SetInt("Score", meteorite_count);
-        
-        if (PlayerPrefs.HasKey("Highscore"))
+        if (!string.IsNullOrEmpty(txt.text))
         {
-            if (meteorite_count >= PlayerPrefs.GetInt("Highscore"))
+            Highscore new_highscore = new Highscore();
+            new_highscore.player_name = txt.text;
+            new_highscore.score = 0;
+            new_highscore.highscore = 0;
+            
+            existentuserwithsamedata = false;
+            
+            foreach (Highscore highscore in highscore_data.highscorelist)
             {
-                PlayerPrefs.SetInt("Highscore", meteorite_count);
+                if (new_highscore.player_name.Equals(highscore.player_name))
+                {
+                    existentuserwithsamedata = true;
+                    Toast.Show("Name already in use", 2f, ToastColor.Orange,ToastPosition.BottomCenter);
+                    break;
+                }
+                
+                highscorelist_TMP.Add(highscore);
+            }
+
+            if (!existentuserwithsamedata)
+            {
+                PlayerPrefs.SetString("PlayerName", new_highscore.player_name);
+                highscorelist_TMP.Add(new_highscore);
+                Toast.Show("Player Added", 2f, ToastColor.Orange,ToastPosition.BottomCenter);
+
+                highscore_data.highscorelist = highscorelist_TMP.ToArray();
+                WebRequest_Highscore.Instance.Escribir_Lista_Scores_en_JSON(highscore_data);
             }
         }
-        else
+    }
+    
+    public void Check_PlayerName(TMP_Text txt)
+    {
+        if (!string.IsNullOrEmpty(txt.text))
         {
-            PlayerPrefs.SetInt("Score", meteorite_count);
-            PlayerPrefs.SetInt("Highscore", meteorite_count);
+            existentuserwithsamedata = false;
+            
+            foreach (Highscore highscore in highscore_data.highscorelist)
+            {
+                if (txt.text.Equals(highscore.player_name))
+                {
+                    existentuserwithsamedata = true;
+                    Toast.Show("Name already in use", 2f, ToastColor.Orange,ToastPosition.BottomCenter);
+                    break;
+                }
+                
+                highscorelist_TMP.Add(highscore);
+            }
+            
+            if (!existentuserwithsamedata)
+            {
+                foreach (Highscore highscore in highscorelist_TMP)
+                {
+                    if (highscore.player_name.Equals(PlayerPrefs.GetString("PlayerName")))
+                    {
+                        highscore.player_name = txt.text;
+                        break;
+                    }
+                }
+
+                Toast.Show("Name Changed", 2f, ToastColor.Orange,ToastPosition.BottomCenter);
+
+                highscore_data.highscorelist = highscorelist_TMP.ToArray();
+                WebRequest_Highscore.Instance.Escribir_Lista_Scores_en_JSON(highscore_data);
+            }
         }
     }
+
+    public void Highscore()
+    {
+        foreach (Highscore highscore in highscore_data.highscorelist)
+        {
+            if (PlayerPrefs.GetString("PlayerName").Equals(highscore.player_name))
+            {
+                highscore.score = meteorite_count;
+
+                if (meteorite_count < highscore.highscore)
+                {
+                    highscore.highscore = meteorite_count;
+                }
+                
+                break;
+            }
+        }
+    }
+    
+    #endregion
 }

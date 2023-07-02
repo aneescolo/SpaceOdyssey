@@ -1,9 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Video;
 
 public class Planet_Logic_Elipse2 : MonoBehaviour
 {
@@ -29,7 +25,7 @@ public class Planet_Logic_Elipse2 : MonoBehaviour
     private void Start()
     {
         angularSpeed = 1;
-        lives = 5;
+        lives = 10;
     }
 
     private void Update()
@@ -67,11 +63,11 @@ public class Planet_Logic_Elipse2 : MonoBehaviour
     
     private void PlanetLifeCheck()
     {
-        if (lives == 4)
+        if (lives == 6)
         {
             gameObject.GetComponentInChildren<Animator>().SetTrigger("1");
         }
-        else if (lives == 2)
+        else if (lives == 4)
         {
             gameObject.GetComponentInChildren<Animator>().SetTrigger("2");
         }

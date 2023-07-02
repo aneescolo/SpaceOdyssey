@@ -116,7 +116,10 @@ public class AnimationEvent_Handler : MonoBehaviour
     
     public void GameProfileOff()
     {
-        game_profile.SetActive(false);
+        if (game_profile != null)
+        {
+            game_profile.SetActive(false);
+        }
     }
     
     public void Pause_Game()

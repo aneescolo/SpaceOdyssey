@@ -13,6 +13,7 @@ public static class Constantes
     
     // Listas
     public static string NOMBRE_FILE_SCORES = "SpaceOdyssey_Score_List";
+    public static string NOMBRE_FILE_HIGHSCORES = "SpaceOdyssey_HighScore_List";
     
     // Mensajes para usuario
     public static string DATOS_NO_CORRECTOS = "Los datos introducidos no son correctos";

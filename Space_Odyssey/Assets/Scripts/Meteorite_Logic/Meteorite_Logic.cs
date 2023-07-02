@@ -16,7 +16,7 @@ public class Meteorite_Logic : MonoBehaviour
     public int value;
 
     private float angle;
-    private int force_impact;
+    [SerializeField] private int force_impact;
 
     [SerializeField] AudioClip touch;
     [SerializeField] AudioClip point;
@@ -28,15 +28,6 @@ public class Meteorite_Logic : MonoBehaviour
         rotationCenter = GameObject.Find("Sun");
 
         angle = Random.Range(50, 75);
-        
-        if (gameObject.name.Equals("basic_meteorite") || gameObject.name.Equals("ice_meteorite"))
-        {
-            force_impact = 1;
-        }
-        else if (gameObject.name.Equals("green_meteorite"))
-        {
-            force_impact = 3;
-        }
     }
     
     void Update()
@@ -56,30 +47,27 @@ public class Meteorite_Logic : MonoBehaviour
         {
             Sound_Manager.instance.PlaySoundEffect(point);
             Game_Manager.instance.AddMeteoriteCount(value);
-            StartCoroutine(Destroy());
         }
         else if (col.GetComponent<Planet_Logic_Round>())
         {
             Sound_Manager.instance.PlaySoundEffect(touch);
             col.GetComponent<Planet_Logic_Round>().lives -= force_impact;
-            StartCoroutine(Destroy());
+            Debug.Log(col.gameObject.name +"/" + col.GetComponent<Planet_Logic_Round>().lives);
         }
-        else if (GetComponent<Planet_Logic_Elipse1>())
+        else if (col.GetComponent<Planet_Logic_Elipse1>())
         {
             Sound_Manager.instance.PlaySoundEffect(touch);
             col.GetComponent<Planet_Logic_Elipse1>().lives -= force_impact;
-            StartCoroutine(Destroy());
+            Debug.Log(col.gameObject.name +"/" + col.GetComponent<Planet_Logic_Elipse1>().lives);
         }
         else if (col.GetComponent<Planet_Logic_Elipse2>())
         {
             Sound_Manager.instance.PlaySoundEffect(touch);
             col.GetComponent<Planet_Logic_Elipse2>().lives -= force_impact;
-            StartCoroutine(Destroy());
+            Debug.Log(col.gameObject.name +"/" + col.GetComponent<Planet_Logic_Elipse2>().lives);
         }
-        else
-        {
-            StartCoroutine(Destroy());
-        }
+
+        StartCoroutine(Destroy());
     }
 
     IEnumerator Destroy()
