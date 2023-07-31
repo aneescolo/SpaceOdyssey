@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +11,9 @@ public class AnimationEvent_Handler : MonoBehaviour
     [SerializeField] private GameObject ranking_out_btn;
     [SerializeField] private GameObject game_structure;
     [SerializeField] private GameObject game_profile;
-
+    
+    [SerializeField] private GameObject name_panel;
+    
     public void SunTriggerIn()
     {
         sun.GetComponent<Animator>().SetTrigger("In");
@@ -57,6 +57,15 @@ public class AnimationEvent_Handler : MonoBehaviour
     public void OptionsTxtTriggerIn()
     {
         options_txt.GetComponent<Animator>().SetTrigger("In");
+
+        if (name_panel != null && PlayerPrefs.GetString("PlayerName") == "Player")
+        {
+            name_panel.SetActive(false);
+        }
+        else
+        {
+            name_panel.SetActive(true);
+        }
     }
     
     public void OptionsTxtTriggerOut()

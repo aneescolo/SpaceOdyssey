@@ -22,7 +22,10 @@ public class Brightness_Manager : MonoBehaviour
 
         brightness.TryGetSettings(out _exposure);
 
-        _slider.onValueChanged.AddListener(val => ChangeMasterBrightness(val));
+        if (_slider != null)
+        {
+            _slider.onValueChanged.AddListener(val => ChangeMasterBrightness(val));
+        }
     }
 
     private void ChangeMasterBrightness(float value)

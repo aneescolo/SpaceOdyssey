@@ -24,8 +24,11 @@ public class Sound_Manager : MonoBehaviour
         {
             StartCoroutine(ChargeSavedMusicVolume());
         }
-        
-        _slider.onValueChanged.AddListener(val => ChangeMasterVolume(val));
+
+        if (_slider != null)
+        {
+            _slider.onValueChanged.AddListener(val => ChangeMasterVolume(val));
+        }
     }
 
     public void PlaySoundEffect(AudioClip clip)
